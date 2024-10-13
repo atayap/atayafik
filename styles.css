@@ -25,6 +25,10 @@ body {
     z-index: 100;
 }
 
+.logo-nav {
+    display: none; 
+}
+
 .logo {
     position: relative;
     font-size: 25px;
@@ -515,6 +519,8 @@ body {
     }   
 }
 
+
+
 @media screen and (max-width: 640px) {
     .home-imgHover:hover {
         background: none;
@@ -730,6 +736,16 @@ body {
     /* Optional: Style for the hamburger icon when active */
     .logonav.active i {
         color: aliceblue; /* Change icon color when active */
+    }
+
+    .home {
+        height: 100vh;
+        background: url('img/Desain\ tanpa\ judul\ \(2\).png') no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
     }
 }
 
