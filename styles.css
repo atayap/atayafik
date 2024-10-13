@@ -37,6 +37,10 @@ body {
     font-weight: 600;
 }
 
+.logo-1 {
+    display: none;
+}
+
 .logo::before {
     content: '';
     position: absolute;
@@ -519,6 +523,12 @@ body {
     }   
 }
 
+.logo {
+    display: none; /* Tampilkan logo teks di desktop */
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+}
 
 
 @media screen and (max-width: 640px) {
@@ -526,6 +536,17 @@ body {
         background: none;
         opacity: .8;
     }
+
+    .home {
+        height: 100vh;
+        background: url('img/Desain\ tanpa\ judul\ \(3\).png') no-repeat;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+    }
+
 
     .nav-links {
         display: none;
@@ -738,14 +759,47 @@ body {
         color: aliceblue; /* Change icon color when active */
     }
 
-    .home {
-        height: 100vh;
-        background: url('img/Desain\ tanpa\ judul\ \(2\).png') no-repeat;
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        padding: 0 10px;
+    .logo {
+        display: none; /* Hilangkan logo teks di tampilan mobile */
     }
+}
+
+/* Logo gambar hanya tampil di mobile */
+.logo-mobile {
+    display: none; /* Sembunyikan logo gambar di desktop */
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.home-imgHover::before {
+    display: none;
+}
+
+
+
+
+/* Tampilkan logo gambar pada tampilan mobile */
+@media screen and (max-width: 640px) {
+    .logo-mobile {
+        display: block; /* Tampilkan logo gambar di mobile */
+    }
+    .logo {
+        position: relative;
+        font-size: 25px;
+        color: aliceblue;
+        text-decoration: none;
+        font-weight: 900;
+        left: 60px;
+    }
+}
+
+/* Styling logo gambar dengan border dan lingkaran */
+.logo-mobile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid black;
+    object-fit: cover;
 }
 
