@@ -428,7 +428,7 @@ body {
 }
 
 .home-imgHover:hover {
-    background:#081b29;
+    background:#08290b;
     opacity: .8;
 }
 
@@ -445,6 +445,64 @@ body {
     z-index: 100;
 }
 
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Style untuk navbar di desktop */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Agar item navbar sejajar ke kanan */
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-1 {
+    display: flex;
+    justify-content: flex-end; /* Agar item navbar sejajar ke kanan */
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+}
+
+.navbar-1 a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+}
+
+/* Hamburger menu icon hanya muncul di mobile */
+.logo-nav {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
 @keyframes showRight {
     100% {
         width: 0;
@@ -456,3 +514,222 @@ body {
         pointer-events: auto;
     }   
 }
+
+@media screen and (max-width: 640px) {
+    .home-imgHover:hover {
+        background: none;
+        opacity: .8;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: #222;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+        border-bottom: 1px solid #fff;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        color: #fff;
+    }
+
+    .portfolio-container {
+        grid-template-columns: 1fr; /* Satu kolom untuk tampilan mobile */
+        padding: 10px; /* Kurangi padding untuk ruang lebih */
+    }
+
+    .portfolio-item {
+        margin-bottom: 20px; /* Tambah jarak antara item portfolio */
+    }
+
+    .portfolio-info h2 {
+        font-size: 18px; /* Sesuaikan ukuran font untuk heading */
+    }
+
+    .portfolio-info p {
+        font-size: 12px; /* Sesuaikan ukuran font untuk deskripsi */
+    }
+
+    .view-button {
+        padding: 8px 15px; /* Sesuaikan padding untuk tombol */
+        font-size: 14px; /* Sesuaikan ukuran font untuk tombol */
+    }
+
+    .shape-box {
+        margin: 50px auto; /* Sesuaikan margin untuk shape-box */
+        width: 90%; /* Lebar shape-box lebih kecil di tampilan mobile */
+    }
+
+    .intro::before {
+        content: ''; /* Membuat konten kosong */
+        position: absolute; /* Memposisikan gambar secara absolut */
+        top: -50px; /* Sesuaikan posisi vertikal */
+        left: 50%; /* Memposisikan gambar di tengah */
+        transform: translateX(-50%); /* Menyelaraskan gambar ke tengah */
+        width: 100px; /* Ukuran gambar */
+        height: 100px; /* Ukuran gambar */
+        border-radius: 50%; /* Membuat gambar bulat */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan */
+        background-image: url('img/stock-photo-1013144389\ (1\).jpg'); /* Ganti dengan path gambar Anda */
+        background-size: cover; /* Memastikan gambar menutupi area */
+        display: block; /* Menampilkan gambar pada layar kecil */
+    }
+
+    .home-imgHover::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 130%;
+        height: 100%;
+        background: #081b29;
+        animation: showRight 2s ease forwards;
+        animation-delay: none;
+        z-index: 100;
+    }
+
+    .navbar {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        display: none;
+        font-size: 30px;
+    }
+
+    .navbar-1 {
+        position: absolute; /* Memposisikan navbar secara absolut */
+        top: 60px; /* Tempatkan di bawah ikon garis tiga */
+        right: 0; /* Posisikan di kanan */
+        display: none; /* Tersembunyi secara default */
+        flex-direction: column; /* Menyusun item secara vertikal */
+        background-color: #081b29de; /* Warna latar belakang navbar */
+        padding: 10px; /* Padding di dalam navbar */
+        z-index: 100; /* Pastikan berada di atas elemen lain */
+    }
+
+    .navbar-2 {
+        position: absolute; /* Memposisikan navbar secara absolut */
+        top: 60px; /* Tempatkan di bawah ikon garis tiga */
+        right: 0; /* Posisikan di kanan */
+        display: none; /* Tersembunyi secara default */
+        flex-direction: column; /* Menyusun item secara vertikal */
+        background-color: #081b29de; /* Warna latar belakang navbar */
+        padding: 10px; /* Padding di dalam navbar */
+        z-index: 100; /* Pastikan berada di atas elemen lain */
+    }
+
+    .navbar-2 a {
+        padding: 10px; /* Tambahkan padding pada tautan */
+        color: aliceblue; /* Warna teks */
+        text-decoration: none; /* Tanpa garis bawah */
+        transition: color 0.3s; /* Animasi saat hover */
+    }
+
+    .navbar a:hover,
+    .navbar a.active {
+        color: aqua; /* Warna saat hover */
+    }
+
+    .navbar-1 a:hover,
+    .navbar-1 a.active-1 {
+        color: aqua; /* Warna saat hover */
+    }
+
+    .navbar-2 a:hover,
+    .navbar-2 a.active-2 {
+        color: aqua; /* Warna saat hover */
+    }
+
+    .navbar-1.active {
+        display: flex; /* Tampilkan navbar saat aktif */
+    }
+
+    .navbar-2.active {
+        display: flex; /* Tampilkan navbar saat aktif */
+    }
+
+    .logo-nav {
+        display: block;
+        margin-left: auto;
+        position: relative; /* Pastikan logo-nav bersifat relatif */
+    }
+
+    .logo-nav.active {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+    }
+
+    .navbar-1 a {
+        position: relative;
+        font-size: 15px;
+        color: aliceblue;
+        text-decoration: none;
+        font-weight: 400;
+        margin-left: 35px;
+        transition: .3s;
+    }
+
+    .navbar-2 a {
+        position: relative;
+        font-size: 15px;
+        color: aliceblue;
+        text-decoration: none;
+        font-weight: 400;
+        margin-left: 35px;
+        transition: .3s;
+    }
+
+    .navbar-1 a::before {
+        display: none;
+    }
+
+    .navbar-2 a::before {
+        display: none;
+    }
+
+    .navbar-2 a:hover,
+    .navbar-2 a.active-2 {
+        color: aqua;
+    }
+
+    .navbar {
+        position: absolute; /* Positioning navbar absolutely */
+        top: 60px; /* Adjust this value based on the height of your header */
+        right: 0; /* Align to the right of the screen */
+        display: none; /* Hide by default */
+        flex-direction: column; /* Vertical layout */
+        background-color: #081b29de; /* Background color */
+        padding: 10px; /* Padding for the navbar */
+        z-index: 100; /* Ensures it appears on top */
+        width: 100%; /* Full width */
+    }
+
+    .navbar a {
+        padding: 10px; /* Padding for links */
+        color: aliceblue; /* Link color */
+        text-decoration: none; /* No underline */
+        transition: color 0.3s; /* Transition effect on hover */
+        display: block; /* Block display for full width */
+    }
+
+    .navbar.active {
+        display: flex; /* Show navbar when active */
+    }
+
+    /* Optional: Style for the hamburger icon when active */
+    .logonav.active i {
+        color: aliceblue; /* Change icon color when active */
+    }
+}
+
